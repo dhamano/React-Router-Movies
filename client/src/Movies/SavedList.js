@@ -10,9 +10,11 @@ export default class SavedList extends Component {
     return (
       <div className="saved-list">
         <h3>Saved Movies:</h3>
-        {this.props.list.map( (movie,i) => (
-          <span key={i} className="saved-movie">{movie.title}</span>
-        ))}
+        <ul>
+          {this.props.list.map( (movie,i) => (
+            <li><Link key={i} to={`/movie/${movie.id}`} className="saved-movie">{movie.title}</Link></li>
+          ))}
+        </ul>
         <Link to="/" className="home-button">Home</Link>
       </div>
     );

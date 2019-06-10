@@ -17,6 +17,11 @@ export default class Movie extends Component {
     this.fetchMovie(id);
   }
 
+  componentDidUpdate() {
+    const id = this.props.match.params.movieId;
+    this.fetchMovie(id);
+  }
+
   fetchMovie = id => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
