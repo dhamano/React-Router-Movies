@@ -56,6 +56,15 @@ body {
         &:hover {
           text-decoration: underline;
         }
+
+        &.selected {
+          color: #ccc;
+          cursor: default;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
       }
     }
   }
