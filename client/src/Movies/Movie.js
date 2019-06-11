@@ -17,9 +17,11 @@ export default class Movie extends Component {
     this.fetchMovie(id);
   }
 
-  componentDidUpdate() {
-    const id = this.props.match.params.movieId;
-    this.fetchMovie(id);
+  componentDidUpdate(prevState, prevProps) {
+    if(prevState.match.params.movieId !== this.props.match.params.movieId) {
+      const id = this.props.match.params.movieId;
+      this.fetchMovie(id);
+    }
   }
 
   fetchMovie = id => {
